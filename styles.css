@@ -1,0 +1,228 @@
+:root {
+  --bg1: #0b0024;
+  --bg2: #3d0e4e;
+  --text: #f6eef6;
+  --accent: #ff67b8;
+  --accent2: #62d2ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, rgba(255, 103, 184, 0.2), transparent 25%),
+              linear-gradient(135deg, var(--bg1), var(--bg2));
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.scene {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.gift-zone {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.gift-card {
+  width: 260px;
+  height: 260px;
+  position: relative;
+  margin: 0 auto 20px;
+  transform-style: preserve-3d;
+  perspective: 900px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.gift-top,
+.gift-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.gift-top {
+  top: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(145deg, rgba(255, 103, 184, 0.95), rgba(255, 255, 255, 0.15));
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.45), inset 0 0 30px rgba(255, 103, 184, 0.35);
+}
+
+.gift-body {
+  bottom: 0;
+  height: 180px;
+  background: linear-gradient(145deg, rgba(98, 210, 255, 0.9), rgba(255, 103, 184, 0.35));
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 30px 40px rgba(0,0,0,0.45), inset 0 0 30px rgba(98, 210, 255, 0.3);
+}
+
+.gift-card::before,
+.gift-card::after {
+  content: '';
+  position: absolute;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.18);
+}
+
+.gift-card::before {
+  width: 30px;
+  height: 30px;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.open-btn {
+  border: none;
+  background: linear-gradient(135deg, #ff67b8, #62d2ff);
+  color: #1b0221;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.open-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+.love-letter {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+}
+
+.letter-card {
+  max-width: 760px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
+  padding: 32px;
+  margin: 0 auto;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.neon-heart {
+  width: 100px;
+  height: 90px;
+  position: relative;
+  transform: rotate(-45deg);
+  margin-bottom: 12px;
+  background: radial-gradient(circle at 30% 30%, #ff72c2, transparent 45%),
+              linear-gradient(180deg, #ff2a94, #ff67b8 60%, #ffdbfb 100%);
+  filter: drop-shadow(0 0 24px rgba(255, 103, 184, 0.8));
+}
+
+.neon-heart::before,
+.neon-heart::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: inherit;
+  top: -50px;
+  left: 0;
+}
+
+.neon-heart::after {
+  left: 50px;
+}
+
+.header h1 {
+  font-size: 2.7rem;
+  letter-spacing: 1px;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #ffe6ff;
+}
+
+.letter-content p,
+.shayari p {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  margin: 10px 0;
+  color: #f5e5ff;
+}
+
+.proposal-line {
+  margin: 20px 0;
+  padding: 16px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 103, 184, 0.4);
+  font-weight: 700;
+}
+
+.shayari {
+  margin-top: 18px;
+  background: rgba(0, 0, 0, 0.18);
+  padding: 16px 18px;
+  border-radius: 18px;
+}
+
+.romantic-link a {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, rgba(255,103,184,0.95), rgba(98,210,255,0.95));
+  color: #1b0221;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(255, 103, 184, 0.25);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotateX(0deg); }
+  50% { transform: translateY(-18px) rotateX(5deg); }
+}
+
+@media (max-width: 720px) {
+  .letter-card {
+    padding: 24px;
+  }
+  .header h1 {
+    font-size: 2rem;
+  }
+  .open-btn {
+    width: 100%;
+  }
+}
